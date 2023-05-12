@@ -15,8 +15,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.compose.ui.input.pointer.motionEventSpy
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.germainkevin.collapsingtopbar.rememberCollapsingTopBarScrollBehavior
 import mohamed.taha.fakestoretask.ui.cart.components.CartTopAppBar
@@ -67,48 +69,78 @@ fun CartScreen(
             )
         },
         content = { contentPadding ->
-            if (addedToCartProducts.isEmpty()) {
-                Column(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .background(color = MaterialTheme.colorScheme.background)
-                        .verticalScroll(rememberScrollState())
-                        .padding(contentPadding),
-                    verticalArrangement = Arrangement.Center,
-                    horizontalAlignment = Alignment.CenterHorizontally
-                ) {
-                    Text(
-                        text = stringResource(id = R.string.no_cart_products),
-                        color = MaterialTheme.colorScheme.onBackground
-                    )
-                }
-            } else {
-                LazyColumn(
-                    modifier = Modifier
-                        .background(MaterialTheme.colorScheme.background)
-                        .fillMaxSize()
-                        .padding(contentPadding)
-                ) {
-                    item {
-                        Spacer(modifier = Modifier.height(8.dp))
-                    }
-                    items(
-                        items = addedToCartProducts,
-                        key = { it.hashCode() }
-                    ) { product ->
-                        CartProductItem(
-                            modifier = Modifier
-                                .padding(start = 4.dp, end = 4.dp, top = 4.dp, bottom = 12.dp)
-                                .fillMaxWidth()
-                                .animateItemPlacement(),
-                            product = product,
-                            removeFromCart = {
-                                cartViewModel.updateProduct(it)
-                            }
+
+            Column() {
+                if (addedToCartProducts.isEmpty()) {
+                    Column(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .background(color = MaterialTheme.colorScheme.background)
+                            .verticalScroll(rememberScrollState())
+                            .padding(contentPadding),
+                        verticalArrangement = Arrangement.Center,
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Text(
+                            text = stringResource(id = R.string.no_cart_products),
+                            color = MaterialTheme.colorScheme.onBackground
                         )
                     }
+                } else {
+                    LazyColumn(
+                        modifier = Modifier
+                            .background(MaterialTheme.colorScheme.background)
+                            .wrapContentHeight()
+                            .padding(contentPadding)
+                    ) {
+                        item {
+                            Spacer(modifier = Modifier.height(8.dp))
+                        }
+                        items(
+                            items = addedToCartProducts,
+                            key = { it.hashCode() }
+                        ) { product ->
+                            CartProductItem(
+                                modifier = Modifier
+                                    .padding(start = 4.dp, end = 4.dp, top = 4.dp, bottom = 12.dp)
+                                    .fillMaxWidth()
+                                    .animateItemPlacement(),
+                                product = product,
+                                removeFromCart = {
+                                    cartViewModel.updateProduct(it)
+                                }
+                            )
+                        }
+                    }
                 }
+
+                Row(
+
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 16.dp),
+                    horizontalArrangement = Arrangement.SpaceBetween
+                ) {
+                    Text(
+                        style = MaterialTheme.typography.headlineLarge.copy(
+                            color = MaterialTheme.colorScheme.onBackground,
+                        ),                        fontSize = 24.sp,
+                        text = "Total cost"
+                    )
+                    Text(
+                        style = MaterialTheme.typography.headlineLarge.copy(
+                            color = MaterialTheme.colorScheme.onBackground,
+                        ),
+                        fontSize = 24.sp,
+                        text = "100 $"
+                    )
+
+
+                }
+
             }
+
+
         }
     )
 }
