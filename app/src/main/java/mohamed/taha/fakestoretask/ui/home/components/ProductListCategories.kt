@@ -10,7 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.germainkevin.mystore.data.ProductListCategory
+import mohamed.taha.fakestoretask.data.ProductListCategory
 import mohamed.taha.fakestoretask.ui.home.HomeScreenState
 
 @OptIn(ExperimentalMaterial3Api::class)

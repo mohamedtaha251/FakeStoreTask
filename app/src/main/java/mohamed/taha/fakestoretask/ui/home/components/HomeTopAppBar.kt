@@ -20,6 +20,7 @@ import com.germainkevin.collapsingtopbar.CollapsingTopBar
 import com.germainkevin.collapsingtopbar.CollapsingTopBarScrollBehavior
 import mohamed.taha.fakestoretask.data.Product
 import mohamed.taha.fakestoretask.utils.NavActions
+import mohamed.taha.fakestoretask.R
 
 
 @Composable

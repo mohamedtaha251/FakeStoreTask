@@ -24,6 +24,7 @@ import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import mohamed.taha.fakestoretask.data.Product
+import mohamed.taha.fakestoretask.R
 
 
 @Composable

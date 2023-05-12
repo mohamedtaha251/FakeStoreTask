@@ -19,12 +19,13 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.germainkevin.collapsingtopbar.rememberCollapsingTopBarScrollBehavior
-import com.germainkevin.mystore.ui.cart.components.CartTopAppBar
+import mohamed.taha.fakestoretask.ui.cart.components.CartTopAppBar
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import mohamed.taha.fakestoretask.ui.cart.components.CartProductItem
 import mohamed.taha.fakestoretask.ui.drawer.LeftDrawer
 import mohamed.taha.fakestoretask.utils.NavActions
+import mohamed.taha.fakestoretask.R
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable

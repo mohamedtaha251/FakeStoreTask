@@ -1,7 +1,12 @@
 package com.germainkevin.mystore.ui.home
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Scaffold
@@ -20,14 +25,16 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.germainkevin.collapsingtopbar.rememberCollapsingTopBarScrollBehavior
-
-import mohamed.taha.fakestoretask.ui.home.components.HomeTopAppBar
-import mohamed.taha.fakestoretask.ui.home.components.ProductItem
 import com.germainkevin.mystore.ui.home.components.ProductListCategories
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
+import mohamed.taha.fakestoretask.R
+import mohamed.taha.fakestoretask.data.ProductListCategory
+import mohamed.taha.fakestoretask.ui.drawer.LeftDrawer
 import mohamed.taha.fakestoretask.ui.home.HomeViewModel
+import mohamed.taha.fakestoretask.ui.home.components.HomeTopAppBar
+import mohamed.taha.fakestoretask.ui.home.components.ProductItem
 import mohamed.taha.fakestoretask.utils.NavActions
 
 @Composable

@@ -1,4 +1,4 @@
-package com.germainkevin.mystore.ui.about
+package mohamed.taha.fakestoretask.ui.about
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -22,9 +22,6 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.germainkevin.collapsingtopbar.rememberCollapsingTopBarScrollBehavior
-import com.germainkevin.mystore.R
-import com.germainkevin.mystore.ui.theme.WebLinkColor
-import com.germainkevin.mystore.utils.sendUserToSpecificWebPage
 import mohamed.taha.fakestoretask.MainActivity
 import mohamed.taha.fakestoretask.R
 import mohamed.taha.fakestoretask.ui.about.components.AboutTopBar

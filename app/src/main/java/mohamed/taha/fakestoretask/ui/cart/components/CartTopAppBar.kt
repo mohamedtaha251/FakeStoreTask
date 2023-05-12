@@ -1,4 +1,4 @@
-package com.germainkevin.mystore.ui.cart.components
+package mohamed.taha.fakestoretask.ui.cart.components
 
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
@@ -12,8 +12,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 import com.germainkevin.collapsingtopbar.CollapsingTopBar
 import com.germainkevin.collapsingtopbar.CollapsingTopBarScrollBehavior
-import com.germainkevin.mystore.R
-import com.germainkevin.mystore.data.Product
 import mohamed.taha.fakestoretask.R
 import mohamed.taha.fakestoretask.data.Product
 

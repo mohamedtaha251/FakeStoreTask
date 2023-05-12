@@ -25,7 +25,7 @@ import mohamed.taha.fakestoretask.ui.drawer.LeftDrawer
 import mohamed.taha.fakestoretask.ui.favorites.components.FavoriteProductItem
 import mohamed.taha.fakestoretask.ui.favorites.components.FavoritesTopAppBar
 import mohamed.taha.fakestoretask.utils.NavActions
-
+import mohamed.taha.fakestoretask.R
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
