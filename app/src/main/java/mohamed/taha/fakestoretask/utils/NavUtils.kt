@@ -1,4 +1,4 @@
-package com.germainkevin.mystore.utils
+package mohamed.taha.fakestoretask.utils
 
 import androidx.navigation.NavHostController
 

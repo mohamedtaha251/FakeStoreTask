@@ -1,6 +1,6 @@
-package com.germainkevin.mystore.data.api
+package mohamed.taha.fakestoretask.data.api
 
-import com.germainkevin.mystore.data.Product
+import mohamed.taha.fakestoretask.data.Product
 import retrofit2.Call
 import retrofit2.http.GET
 

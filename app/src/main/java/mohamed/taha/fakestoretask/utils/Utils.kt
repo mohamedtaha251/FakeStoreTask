@@ -1,10 +1,10 @@
-package com.germainkevin.mystore.utils
+package mohamed.taha.fakestoretask.utils
 
 import android.app.Activity
 import android.content.Intent
 import android.net.Uri
-import com.germainkevin.mystore.data.Product
-import com.germainkevin.mystore.data.ProductListCategory
+import mohamed.taha.fakestoretask.data.Product
+import mohamed.taha.fakestoretask.data.ProductListCategory
 
 /**
  * List of possible product categories coming from the remote FakeStore API*/
