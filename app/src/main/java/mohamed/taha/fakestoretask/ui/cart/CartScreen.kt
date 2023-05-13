@@ -130,6 +130,7 @@ fun CartScreen(
 
 
 
+                val totalCost=addedToCartProducts.map { it.price }.sum()
                 if (addedToCartProducts.isNotEmpty())
                 Row(
                     modifier = Modifier
@@ -150,7 +151,7 @@ fun CartScreen(
                     Text(
                         modifier = Modifier.padding(10.dp),
                         fontSize = 24.sp,
-                        text = "100 $",
+                        text = "$totalCost $",
                         fontWeight = FontWeight.Bold
                     )
                 }
