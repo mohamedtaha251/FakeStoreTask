@@ -8,10 +8,7 @@ import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.MutableState
-import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
@@ -32,23 +29,15 @@ import mohamed.taha.fakestoretask.ui.favorites.FavoritesScreen
 import mohamed.taha.fakestoretask.ui.theme.MyStoreTheme
 import mohamed.taha.fakestoretask.utils.NavActions
 import mohamed.taha.fakestoretask.utils.NavRoutes
-import mohamed.taha.fakestoretask.utils.PersistentStorage
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
-
-    @Inject
-    lateinit var persistentStorage: PersistentStorage
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         WindowCompat.setDecorFitsSystemWindows(window, false)
         setContent {
-            val isDynamicStateTheme =
-                persistentStorage.isUsingDynamicTheme.collectAsState(false).value
-            val dynamicThemeState = mutableStateOf(isDynamicStateTheme)
-            MyStoreTheme(dynamicColor = dynamicThemeState.value) {
+            MyStoreTheme() {
                 val navController = rememberNavController()
                 val navActions = remember(navController) { NavActions(navController) }
                 val coroutineScope = rememberCoroutineScope()
@@ -57,7 +46,7 @@ class MainActivity : ComponentActivity() {
                     navActions = navActions,
                     coroutineScope = coroutineScope,
 
-                )
+                    )
             }
         }
     }

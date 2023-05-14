@@ -10,7 +10,6 @@ import mohamed.taha.fakestoretask.data.MyShopDatabase
 import mohamed.taha.fakestoretask.data.api.FakeStoreApi
 import mohamed.taha.fakestoretask.data.repository.ProductsRepository
 import mohamed.taha.fakestoretask.data.repository.ProductsRepositoryImpl
-import mohamed.taha.fakestoretask.utils.PersistentStorage
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.create
@@ -20,11 +19,6 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object AppModule {
 
-    @Provides
-    @Singleton
-    fun providePersistentStorage(application: Application): PersistentStorage {
-        return PersistentStorage(application.applicationContext)
-    }
 
     @Provides
     @Singleton

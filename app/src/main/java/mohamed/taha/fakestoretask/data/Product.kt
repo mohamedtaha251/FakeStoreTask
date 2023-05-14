@@ -17,5 +17,3 @@ data class Product(
     // When added as Favorites
     var addedAsFavorite: Boolean = false,
 )
-
-data class ProductRating(var rate: Float, var count: Int)
